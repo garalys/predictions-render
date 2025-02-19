@@ -1,6 +1,6 @@
 fastapi
-uvicorn
 pandas
 joblib
+uvicorn
 scikit-learn
 openpyxl
