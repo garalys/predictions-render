@@ -3,9 +3,20 @@ import pandas as pd
 import joblib
 import shutil
 import os
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # ✅ Initialize FastAPI
 app = FastAPI()
+
+# ✅ Add CORS Middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Change to specific domain for security
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ✅ Load the saved Linear Regression model
 model = joblib.load("model/linear_regression.pkl")
